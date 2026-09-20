@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b05q715s3oxn6"]
+
+[ext_resource type="Script" uid="uid://c75a0n2c1lg2x" path="res://Scenes/bots.gd" id="1_18l5b"]
+[ext_resource type="Texture2D" uid="uid://cssy0lselkv7i" path="res://Pngs/PNG/Default size/tank_blue.png" id="1_fimc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7b7a"]
+size = Vector2(33, 30)
+
+[node name="Bot" type="CharacterBody2D" unique_id=785317467]
+script = ExtResource("1_18l5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979098722]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_g7b7a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1620596093]
+texture = ExtResource("1_fimc7")
+
+[node name="Timer" type="Timer" parent="." unique_id=379828098]
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1450100122]
+simplify_path = true
+avoidance_enabled = true
+max_speed = 70.0
+debug_enabled = true

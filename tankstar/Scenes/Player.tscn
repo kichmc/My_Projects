@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cbk1qyuacfn8c"]
+
+[ext_resource type="Script" uid="uid://ch2i7auean3sx" path="res://Scenes/Player.gd" id="1_gntrk"]
+[ext_resource type="Texture2D" uid="uid://tko0f5uy3y38" path="res://Pngs/PNG/Default size/tank_sand.png" id="2_kyqiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+size = Vector2(38, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
+size = Vector2(32, 28)
+
+[node name="Player" type="CharacterBody2D" unique_id=1287992438]
+texture_filter = 1
+script = ExtResource("1_gntrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=309271183]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_kyqiw")
+
+[node name="Tank_body" type="Sprite2D" parent="." unique_id=498984456]
+texture = ExtResource("2_kyqiw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1680637512]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2092100352]
+shape = SubResource("RectangleShape2D_gntrk")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1495222005]
+zoom = Vector2(0.8, 0.8)

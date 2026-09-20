@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dkjqju40jkdbn"]
+
+[ext_resource type="Script" uid="uid://dptb067r4ce7v" path="res://Scenes/Main.gd" id="1_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://cbk1qyuacfn8c" path="res://Scenes/Player.tscn" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://ccr4veebkxwys" path="res://Scenes/Ui.tscn" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://millji08mt5b" path="res://Scenes/map.tscn" id="3_r0du0"]
+[ext_resource type="Script" uid="uid://daw0m0srmo84k" path="res://Scenes/Minimap v1.gd" id="5_pbw6q"]
+
+[node name="Main" type="Node2D" unique_id=2072195544]
+script = ExtResource("1_pbw6q")
+
+[node name="Players" type="Node2D" parent="." unique_id=465630533]
+
+[node name="Player" parent="Players" unique_id=1287992438 instance=ExtResource("1_uu6xs")]
+z_index = 1
+
+[node name="Marker2D" type="Marker2D" parent="Players/Player" unique_id=922437282]
+
+[node name="Control" parent="." unique_id=1467941075 instance=ExtResource("2_r0du0")]
+
+[node name="Map" parent="." unique_id=1435417387 instance=ExtResource("3_r0du0")]
+position = Vector2(272, 320)
+
+[node name="Area2D" type="Area2D" parent="Map" unique_id=2008730822]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Area2D" unique_id=2063904579]
+position = Vector2(469.6764, 299.7226)
+polygon = PackedVector2Array(906.32367, -1491.7225, 1474.3236, -1299.7225, 1922.3236, -971.72266, 2106.3237, -315.7226, 2154.3237, 396.2774, 2538.3237, 388.2774, 3162.3237, -35.722614, 3618.3237, -3.7226117, 3762.3237, 700.27734, 3442.3237, 1412.2775, 2578.3237, 1836.2775, 1498.3236, 2116.2773, 114.32362, 2084.2773, -1165.6764, 2044.2775, -2125.6763, 1764.2775, -2453.6763, 1196.2773, -2445.6763, 236.2774, -2341.6763, -387.7226, -1981.6764, -947.72266, -1853.6764, -1283.7225, -1533.6764, -1507.7225, -1045.6764, -1587.7225, -453.6764, -1771.7225, 58.32362, -1747.7225, 322.3236, -1699.7225)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=555329160]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=2119383311]
+anchors_preset = -1
+anchor_left = 0.9480001
+anchor_right = 1.0
+anchor_bottom = 0.266
+offset_left = -140.09607
+offset_right = -4.0
+offset_bottom = 23.632004
+grow_horizontal = 0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=883635744]
+handle_input_locally = false
+size = Vector2i(196, 196)
+render_target_update_mode = 4
+script = ExtResource("5_pbw6q")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=131036491]
+position = Vector2(947, -7)
+zoom = Vector2(0.15, 0.15)
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer/SubViewportContainer" unique_id=1514490797]
+points = PackedVector2Array(198, -1, 200, 200, 0, 200, -2, -1, 198, -1)
+width = 5.0
+default_color = Color(0, 0.024017245, 0.99999994, 1)

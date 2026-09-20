@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dvgoq3bducqta"]
+
+[ext_resource type="Script" uid="uid://qb7fdqrxnkx5" path="res://bullet.gd" id="1_4s4u5"]
+[ext_resource type="Texture2D" uid="uid://dq51ejecq240j" path="res://Pngs/shotThin.png" id="2_4s4u5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6qx4q"]
+a = Vector2(2, -10)
+b = Vector2(1, 14)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g7b7a"]
+a = Vector2(1, -11)
+b = Vector2(1, 8)
+
+[node name="Bullet" type="CharacterBody2D" unique_id=1339660810]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_4s4u5")
+metadata/_edit_vertical_guides_ = [-99.0]
+
+[node name="Area" type="Area2D" parent="." unique_id=961472931]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=1509678403]
+shape = SubResource("SegmentShape2D_6qx4q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area" unique_id=1002613752]
+texture = ExtResource("2_4s4u5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620449154]
+shape = SubResource("SegmentShape2D_g7b7a")
+disabled = true
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
