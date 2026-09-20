@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b3n8w7kcxsb5b"]
+
+[ext_resource type="Script" uid="uid://ilbkpqlpxhsq" path="res://coin_score.gd" id="1_803au"]
+[ext_resource type="Texture2D" uid="uid://b8q0xv4wo4w6" path="res://brackeys_platformer_assets/sprites/coin1.png" id="2_04pwj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dgfsc"]
+font_size = 40
+
+[node name="Control" type="Control" unique_id=1788435138]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_803au")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=260022921]
+
+[node name="coin score" type="Label" parent="CanvasLayer" unique_id=1652844322]
+offset_left = 38.0
+offset_top = 6.0
+offset_right = 219.0
+offset_bottom = 78.0
+scale = Vector2(0.6140076, 0.81771463)
+label_settings = SubResource("LabelSettings_dgfsc")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1494426097]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 71.0
+offset_bottom = 38.0
+scale = Vector2(0.45977905, 1.5997236)
+texture = ExtResource("2_04pwj")

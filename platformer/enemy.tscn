@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://1g43dvmxf5hh"]
+
+[ext_resource type="Script" uid="uid://85mlrsgtuybb" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://d0vkmof4tpuhf" path="res://brackeys_platformer_assets/sprites/slime_green.png" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(22.614628, 15.472409)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
+atlas = ExtResource("1_7k104")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
+atlas = ExtResource("1_7k104")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
+atlas = ExtResource("1_7k104")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epg4t"]
+atlas = ExtResource("1_7k104")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dgfsc"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4gyqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi2p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iifgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epg4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iifgy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2070540762 groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_4gyqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1114576638]
+position = Vector2(0, -1.2410245)
+scale = Vector2(0.6190684, 0.54820484)
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1105903387]
+scale = Vector2(1, 0.9599998)
+target_position = Vector2(16, 14.583336)
+collision_mask = 9
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1001826018]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_dgfsc")
+frame_progress = 0.19308922
+speed_scale = 0.5

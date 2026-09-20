@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dg7dij5vxl23r"]
+
+[ext_resource type="PackedScene" uid="uid://dve8hfghfvdfr" path="res://player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://m4rguyvr6ko7" path="res://main.gd" id="1_272bh"]
+[ext_resource type="PackedScene" uid="uid://c2o367m2dms0w" path="res://tile.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dyfjarln2ph88" path="res://coin.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b3n8w7kcxsb5b" path="res://score controller.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://1g43dvmxf5hh" path="res://enemy.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ds7yue21tmgx5" path="res://respawnpoint.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bvlpss8dndybi" path="res://Screen toich.tscn" id="8_5vw27"]
+
+[node name="game level" type="Node" unique_id=1906285233]
+script = ExtResource("1_272bh")
+
+[node name="player_soul" parent="." unique_id=1720779857 instance=ExtResource("1_0xm2m")]
+position = Vector2(-26, 29)
+
+[node name="Tile" parent="." unique_id=822859914 instance=ExtResource("2_h2yge")]
+position = Vector2(10, 76)
+
+[node name="Control" parent="." unique_id=1788435138 instance=ExtResource("4_1bvp3")]
+offset_left = -5.0
+offset_top = 2.0
+offset_right = -5.0
+offset_bottom = 2.0
+
+[node name="RESPAWNPOINT" parent="." unique_id=167293308 instance=ExtResource("6_7mycd")]
+position = Vector2(1342, -53)
+
+[node name="coin gruop" type="Node" parent="." unique_id=388941630]
+
+[node name="coin4" parent="coin gruop" unique_id=1120929277 instance=ExtResource("3_h2yge")]
+position = Vector2(1515, 3)
+
+[node name="coin3" parent="coin gruop" unique_id=1051964275 instance=ExtResource("3_h2yge")]
+position = Vector2(1471, 4)
+
+[node name="coin5" parent="coin gruop" unique_id=1039419906 instance=ExtResource("3_h2yge")]
+position = Vector2(701, -14)
+
+[node name="coin2" parent="coin gruop" unique_id=1150635772 instance=ExtResource("3_h2yge")]
+position = Vector2(1729, 70)
+
+[node name="coin8" parent="coin gruop" unique_id=2090619223 instance=ExtResource("3_h2yge")]
+position = Vector2(1666, 264)
+
+[node name="coin9" parent="coin gruop" unique_id=1505350587 instance=ExtResource("3_h2yge")]
+position = Vector2(1713, 261)
+
+[node name="coin10" parent="coin gruop" unique_id=805496088 instance=ExtResource("3_h2yge")]
+position = Vector2(1877, 266)
+
+[node name="coin11" parent="coin gruop" unique_id=299803752 instance=ExtResource("3_h2yge")]
+position = Vector2(1954, 266)
+
+[node name="coin6" parent="coin gruop" unique_id=404517214 instance=ExtResource("3_h2yge")]
+position = Vector2(1809, 71)
+
+[node name="coin7" parent="coin gruop" unique_id=1751520529 instance=ExtResource("3_h2yge")]
+position = Vector2(1871, 70)
+
+[node name="coin" parent="coin gruop" unique_id=2143127675 instance=ExtResource("3_h2yge")]
+position = Vector2(488, 132)
+
+[node name="enemy grp" type="Node" parent="." unique_id=1703794765]
+
+[node name="CharacterBody2D2" parent="enemy grp" unique_id=708094865 instance=ExtResource("5_lquwl")]
+position = Vector2(1200, 152)
+
+[node name="CharacterBody2D9" parent="enemy grp" unique_id=2070540762 instance=ExtResource("5_lquwl")]
+position = Vector2(2728, 268)
+
+[node name="CharacterBody2D10" parent="enemy grp" unique_id=1749311351 instance=ExtResource("5_lquwl")]
+position = Vector2(2745, 160)
+
+[node name="CharacterBody2D11" parent="enemy grp" unique_id=150044992 instance=ExtResource("5_lquwl")]
+position = Vector2(2521, 158)
+
+[node name="CharacterBody2D4" parent="enemy grp" unique_id=1752047237 instance=ExtResource("5_lquwl")]
+position = Vector2(1641, 266)
+
+[node name="CharacterBody2D6" parent="enemy grp" unique_id=1975471205 instance=ExtResource("5_lquwl")]
+position = Vector2(1554, -105)
+
+[node name="CharacterBody2D8" parent="enemy grp" unique_id=1280555846 instance=ExtResource("5_lquwl")]
+position = Vector2(2368, 168)
+
+[node name="CharacterBody2D7" parent="enemy grp" unique_id=2133144888 instance=ExtResource("5_lquwl")]
+position = Vector2(1629, -102)
+
+[node name="CharacterBody2D5" parent="enemy grp" unique_id=1567924217 instance=ExtResource("5_lquwl")]
+position = Vector2(1918, 265)
+
+[node name="CharacterBody2D3" parent="enemy grp" unique_id=277560083 instance=ExtResource("5_lquwl")]
+position = Vector2(986, -8)
+
+[node name="CharacterBody2D" parent="enemy grp" unique_id=1213136619 instance=ExtResource("5_lquwl")]
+position = Vector2(95, 39)
+
+[node name="Control2" parent="." unique_id=1308942435 instance=ExtResource("8_5vw27")]
+
+[connection signal="collected" from="player_soul" to="Control" method="_on_player_soul_collected"]
+[connection signal="collected" from="player_soul" to="coin gruop/coin" method="_on_player_soul_collected"]
+[connection signal="died" from="player_soul" to="." method="_on_player_soul_died"]
+[connection signal="spawn" from="player_soul" to="." method="_on_player_soul_spawn"]

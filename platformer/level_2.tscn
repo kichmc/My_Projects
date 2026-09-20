@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dl53ebb6jq42k"]
+
+[ext_resource type="Script" uid="uid://b07o0mn1jbbpm" path="res://level_2.gd" id="1_0s5r2"]
+[ext_resource type="PackedScene" uid="uid://bsvi4wax8oyp5" path="res://map_2.tscn" id="1_jg0dc"]
+[ext_resource type="PackedScene" uid="uid://1g43dvmxf5hh" path="res://enemy.tscn" id="2_nmjpi"]
+[ext_resource type="PackedScene" uid="uid://dyfjarln2ph88" path="res://coin.tscn" id="3_n7ypv"]
+[ext_resource type="PackedScene" uid="uid://ds7yue21tmgx5" path="res://respawnpoint.tscn" id="4_0s5r2"]
+[ext_resource type="PackedScene" uid="uid://dve8hfghfvdfr" path="res://player.tscn" id="5_7j8ne"]
+[ext_resource type="PackedScene" uid="uid://b3n8w7kcxsb5b" path="res://score controller.tscn" id="7_7j8ne"]
+[ext_resource type="PackedScene" uid="uid://bvlpss8dndybi" path="res://Screen toich.tscn" id="8_7dov7"]
+
+[node name="Level2" type="Node2D" unique_id=1642600079]
+script = ExtResource("1_0s5r2")
+
+[node name="map2" parent="." unique_id=1182298166 instance=ExtResource("1_jg0dc")]
+
+[node name="Enemy" type="Node" parent="." unique_id=2049666773]
+
+[node name="CharacterBody2D" parent="Enemy" unique_id=2070540762 instance=ExtResource("2_nmjpi")]
+position = Vector2(304, 314)
+
+[node name="CharacterBody2D10" parent="Enemy" unique_id=744785903 instance=ExtResource("2_nmjpi")]
+position = Vector2(2884, 231)
+
+[node name="CharacterBody2D14" parent="Enemy" unique_id=1431462077 instance=ExtResource("2_nmjpi")]
+position = Vector2(2763, 231)
+
+[node name="CharacterBody2D11" parent="Enemy" unique_id=64331432 instance=ExtResource("2_nmjpi")]
+position = Vector2(2485, 145)
+
+[node name="CharacterBody2D12" parent="Enemy" unique_id=1929398425 instance=ExtResource("2_nmjpi")]
+position = Vector2(1905, 48)
+
+[node name="CharacterBody2D13" parent="Enemy" unique_id=1842486038 instance=ExtResource("2_nmjpi")]
+position = Vector2(1746, 41)
+
+[node name="CharacterBody2D9" parent="Enemy" unique_id=1640635835 instance=ExtResource("2_nmjpi")]
+position = Vector2(1745, 280)
+
+[node name="CharacterBody2D2" parent="Enemy" unique_id=2070955875 instance=ExtResource("2_nmjpi")]
+position = Vector2(627, 199)
+
+[node name="CharacterBody2D3" parent="Enemy" unique_id=119810785 instance=ExtResource("2_nmjpi")]
+position = Vector2(967, 329)
+
+[node name="CharacterBody2D4" parent="Enemy" unique_id=1618017250 instance=ExtResource("2_nmjpi")]
+position = Vector2(1052, 331)
+
+[node name="CharacterBody2D5" parent="Enemy" unique_id=15791687 instance=ExtResource("2_nmjpi")]
+position = Vector2(1249, 199)
+
+[node name="CharacterBody2D7" parent="Enemy" unique_id=1498539762 instance=ExtResource("2_nmjpi")]
+position = Vector2(1438, 201)
+
+[node name="CharacterBody2D8" parent="Enemy" unique_id=1394454462 instance=ExtResource("2_nmjpi")]
+position = Vector2(1641, 281)
+
+[node name="coin" type="Node" parent="." unique_id=950602439]
+
+[node name="coin" parent="coin" unique_id=1039419906 instance=ExtResource("3_n7ypv")]
+position = Vector2(224, 156)
+
+[node name="coin2" parent="coin" unique_id=1505437495 instance=ExtResource("3_n7ypv")]
+position = Vector2(181, 154)
+
+[node name="coin3" parent="coin" unique_id=2135322945 instance=ExtResource("3_n7ypv")]
+position = Vector2(285, 310)
+
+[node name="coin4" parent="coin" unique_id=671699898 instance=ExtResource("3_n7ypv")]
+position = Vector2(347, 310)
+
+[node name="coin5" parent="coin" unique_id=1221965395 instance=ExtResource("3_n7ypv")]
+position = Vector2(651, 205)
+
+[node name="coin6" parent="coin" unique_id=185229912 instance=ExtResource("3_n7ypv")]
+position = Vector2(947, 327)
+
+[node name="coin7" parent="coin" unique_id=1080788207 instance=ExtResource("3_n7ypv")]
+position = Vector2(1040, 327)
+
+[node name="coin8" parent="coin" unique_id=1425566257 instance=ExtResource("3_n7ypv")]
+position = Vector2(1343, 199)
+
+[node name="coin9" parent="coin" unique_id=657935242 instance=ExtResource("3_n7ypv")]
+position = Vector2(1600, 287)
+
+[node name="coin10" parent="coin" unique_id=1223079753 instance=ExtResource("3_n7ypv")]
+position = Vector2(1717, 277)
+
+[node name="coin11" parent="coin" unique_id=1805230643 instance=ExtResource("3_n7ypv")]
+position = Vector2(1659, 281)
+
+[node name="coin12" parent="coin" unique_id=307071911 instance=ExtResource("3_n7ypv")]
+position = Vector2(1836, 308)
+
+[node name="coin13" parent="coin" unique_id=1203941502 instance=ExtResource("3_n7ypv")]
+position = Vector2(2101, 376)
+
+[node name="coin14" parent="coin" unique_id=1779936838 instance=ExtResource("3_n7ypv")]
+position = Vector2(2070, 376)
+
+[node name="coin15" parent="coin" unique_id=734402703 instance=ExtResource("3_n7ypv")]
+position = Vector2(1103, 237)
+
+[node name="coin16" parent="coin" unique_id=981845468 instance=ExtResource("3_n7ypv")]
+position = Vector2(415, 297)
+
+[node name="RESPAWNPOINT" parent="." unique_id=167293308 instance=ExtResource("4_0s5r2")]
+position = Vector2(1089, 226)
+
+[node name="RESPAWNPOINT2" parent="." unique_id=2126440293 instance=ExtResource("4_0s5r2")]
+position = Vector2(2093, 370)
+
+[node name="player_soul" parent="." unique_id=1720779857 instance=ExtResource("5_7j8ne")]
+position = Vector2(144, 136)
+
+[node name="Control" parent="." unique_id=1788435138 instance=ExtResource("7_7j8ne")]
+
+[node name="Control2" parent="." unique_id=1308942435 instance=ExtResource("8_7dov7")]
+
+[connection signal="collected" from="player_soul" to="Control" method="_on_player_soul_collected"]
+[connection signal="died" from="player_soul" to="." method="_on_player_soul_died"]
+[connection signal="spawn" from="player_soul" to="." method="_on_player_soul_spawn"]
