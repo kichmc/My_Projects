@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cffblolg8qpee"]
+
+[ext_resource type="Script" uid="uid://77bbo8folwjf" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://701xau8gcgjo" path="res://gnd.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://gnmgk2bbl8d2" path="res://dinoo.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://e018niiv7dtt" path="res://catcus.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bnuea6eq6lheh" path="res://label_2.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://ckoovaj008cmq" path="res://Play again.gd" id="6_7mycd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_g7b7a"]
+font_size = 75
+font_color = Color(0.91402113, 0, 0.11760699, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font_size = 100
+font_color = Color(1, 0, 1, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1211267750]
+script = ExtResource("1_h2yge")
+
+[node name="StaticBody2D" parent="." unique_id=2065403744 instance=ExtResource("1_ig7tw")]
+
+[node name="CharacterBody2D" parent="." unique_id=182222920 instance=ExtResource("2_0xm2m")]
+position = Vector2(154, 309)
+
+[node name="CharacterBody2D2" parent="." unique_id=2111479018 instance=ExtResource("4_1bvp3")]
+position = Vector2(1090, 409)
+scale = Vector2(1.5049094, 1.1742117)
+
+[node name="Score" type="Label" parent="." unique_id=570307363]
+self_modulate = Color(3.465414e-06, 0, 0.7820302, 1)
+offset_left = 28.0
+offset_top = -26.0
+offset_right = 186.0
+offset_bottom = 111.0
+label_settings = SubResource("LabelSettings_lquwl")
+script = ExtResource("5_lquwl")
+
+[node name="Highscore" type="Label" parent="Score" unique_id=507747137]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 49.0
+offset_right = 307.0
+offset_bottom = 91.0
+label_settings = SubResource("LabelSettings_7mycd")
+
+[node name="Timer" type="Timer" parent="." unique_id=1686659404]
+wait_time = 2.0
+autostart = true
+
+[node name="Node" type="Node" parent="." unique_id=1511905061]
+process_mode = 3
+script = ExtResource("6_7mycd")
+
+[node name="Playagain" type="Label" parent="Node" unique_id=1385823103]
+process_mode = 3
+offset_left = 44.0
+offset_top = -6.0
+offset_right = 1275.0
+offset_bottom = 721.0
+text = "Play Again"
+label_settings = SubResource("LabelSettings_g7b7a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game over" type="Label" parent="Node" unique_id=323972019]
+offset_left = 366.0
+offset_top = 184.0
+offset_right = 940.0
+offset_bottom = 321.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_1bvp3")
+
+[connection signal="touch" from="." to="CharacterBody2D" method="_on_node_2d_touch"]
+[connection signal="toucheddd" from="CharacterBody2D" to="Score" method="_on_character_body_2d_toucheddd"]
+[connection signal="toucheddd" from="CharacterBody2D" to="Node" method="_on_character_body_2d_toucheddd"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="CharacterBody2D2" method="_on_timer_timeout"]

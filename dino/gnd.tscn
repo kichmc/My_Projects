@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://701xau8gcgjo"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l48or"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpsec"]
+size = Vector2(1886, 202)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=2065403744]
+physics_material_override = SubResource("PhysicsMaterial_l48or")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1065994306]
+position = Vector2(933, 537)
+shape = SubResource("RectangleShape2D_kpsec")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1419010171]
+offset_right = 1936.0
+offset_bottom = 451.0
+color = Color(0.38965103, 0.7283457, 0.7285312, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=308957910]
+offset_left = 5.0
+offset_top = 447.0
+offset_right = 1941.0
+offset_bottom = 898.0
+color = Color(0.30980393, 0.84705883, 0.08627451, 1)

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://gnmgk2bbl8d2"]
+
+[ext_resource type="Script" uid="uid://cang7yyshdbij" path="res://dinoo.gd" id="1_04y7m"]
+[ext_resource type="Texture2D" uid="uid://f0fr3ibcblnr" path="res://Pics/ExportedLayers.png" id="2_04y7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tqan"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_04y7m"]
+radius = 90.00316
+height = 318.2975
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl512"]
+atlas = ExtResource("2_04y7m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bng28"]
+atlas = ExtResource("2_04y7m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfrms"]
+atlas = ExtResource("2_04y7m")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk757"]
+atlas = ExtResource("2_04y7m")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7b7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl512")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bng28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfrms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk757")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.5
+}]
+
+[node name="rr" type="CharacterBody2D" unique_id=182222920]
+scale = Vector2(0.67432165, 0.67432165)
+script = ExtResource("1_04y7m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=789412775]
+shape = SubResource("RectangleShape2D_5tqan")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=224582776]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=401310243]
+position = Vector2(-5.000004, -5.5)
+rotation = 0.24170212
+scale = Vector2(0.75797206, 0.75797206)
+shape = SubResource("CapsuleShape2D_04y7m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1146548893]
+texture_filter = 1
+position = Vector2(0, -2)
+scale = Vector2(5.5786996, 5.5786996)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1715081233]
+texture_filter = 1
+position = Vector2(6.232411, -20.82064)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_g7b7a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
