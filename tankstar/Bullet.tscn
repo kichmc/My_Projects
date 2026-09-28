@@ -12,7 +12,7 @@ a = Vector2(1, -11)
 b = Vector2(1, 8)
 
 [node name="Bullet" type="CharacterBody2D" unique_id=1339660810]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_4s4u5")
 metadata/_edit_vertical_guides_ = [-99.0]

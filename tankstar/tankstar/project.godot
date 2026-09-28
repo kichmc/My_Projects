@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Tankster"
+config/version="alpha"
+config/tags=PackedStringArray("tankster")
+run/main_scene="uid://bgt4qbo81tl4i"
+config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://n458jhkbbkq1"
+config/icon="uid://n458jhkbbkq1"
+
+[autoload]
+
+Pos="*uid://c33iory7lks3d"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
+
+[input]
+
+Shoot={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(251, 14),"global_position":Vector2(258, 51),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"

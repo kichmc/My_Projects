@@ -1,13 +1,16 @@
 extends Node2D
 var shot = true
-
+var shott = true
+var shooted = false
 @onready var bot = $Bot
 @onready var player = $Players/Player
 @onready var bullet = preload("res://Bullet.tscn")
-
+var bots = preload("res://Scenes/Bots.tscn")
+var bott
 func _ready() -> void:
 	player.global_position = spwan_pos()
 	bot.global_position = spwan_pos()
+	bot_spwan()
 
 
 func Spawn():
@@ -36,13 +39,8 @@ func posobj(pos):
 	return true
 
 
-func spwan_pos():
-	while true:
-		var spawn_pos = Spawn()
-		var valid_pos = check_pos(spawn_pos)
-		var is_in_not = posobj(spawn_pos)
-		if valid_pos != null and is_in_not != null:
-			return spawn_pos
+
+
 
 
 func shoot():
@@ -56,7 +54,37 @@ func shoot():
 
 func _process(delta: float) -> void:
 	bot.player_pos = player.global_position
-
+	for child in get_children():
+		if child is class_bots:
+			child.player_pos = player.global_position
 
 	if Input.is_action_pressed("Shoot") and shot:
 		shoot()
+
+	if shooted and shott:
+		sht()
+
+func sht():
+	shott = false
+	var bulletss = bullet.instantiate()
+	bulletss.global_position = $Bot.global_position
+	bulletss.direction = $Bot.direction
+	add_child(bulletss)
+	await get_tree().create_timer(.5).timeout
+	shott = true
+
+func bot_spwan():
+	var no_spawn = randi_range(6,15)
+	for i in range(no_spawn):
+		bott = bots.instantiate()
+		bott.global_position = spwan_pos()
+		bott.player_pos = player.global_position
+		add_child(bott)
+
+func spwan_pos():
+	while true:
+		var spawn_pos = Spawn()
+		var valid_pos = check_pos(spawn_pos)
+		var is_in_not = posobj(spawn_pos)
+		if valid_pos != null and is_in_not != null:
+			return spawn_pos
