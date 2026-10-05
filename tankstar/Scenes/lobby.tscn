@@ -63,7 +63,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_nvaej")
 theme_override_font_sizes/font_size = 128
 theme_override_styles/normal = SubResource("StyleBoxTexture_1lc8g")
-text = "PLAY
+text = "Play_Offline
 
 "
 icon_alignment = 1
@@ -95,5 +95,24 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_kvffl")
 text = "QUIT"
 icon_alignment = 1
 
+[node name="Play2" type="Button" parent="CanvasLayer" unique_id=302287540]
+anchors_preset = -1
+offset_left = 473.0
+offset_top = 214.0
+offset_right = 1312.9999
+offset_bottom = 535.26697
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nvaej")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxTexture_1lc8g")
+text = "Play
+
+"
+icon_alignment = 1
+
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Play2" to="." method="_on_play_2_pressed"]

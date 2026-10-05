@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ccr4veebkxwys"]
 
+[ext_resource type="Script" uid="uid://2sevyat630j0" path="res://Scenes/Ui.gd" id="1_01iap"]
 [ext_resource type="Texture2D" uid="uid://ds7rk48fur77j" path="res://mobile-controls/Vector/Style A/joystick_circle_nub_c.svg" id="1_dofnr"]
 [ext_resource type="Texture2D" uid="uid://c712t4edbj57y" path="res://Pngs/icon_burst.png" id="2_dofnr"]
 
@@ -32,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_01iap")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1261924627]
 

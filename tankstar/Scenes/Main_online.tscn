@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cftkhfcbyd2ws"]
+
+[ext_resource type="PackedScene" uid="uid://millji08mt5b" path="res://Scenes/map.tscn" id="1_lhmds"]
+[ext_resource type="Script" uid="uid://bf7bbsm0hq6nb" path="res://Scenes/main_online.gd" id="1_uwsns"]
+[ext_resource type="PackedScene" uid="uid://ccr4veebkxwys" path="res://Scenes/Ui.tscn" id="3_tew6e"]
+
+[node name="Node2D" type="Node2D" unique_id=37516115]
+script = ExtResource("1_uwsns")
+
+[node name="PLayers" type="Node" parent="." unique_id=1540895465]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=874741343]
+_spawnable_scenes = PackedStringArray("uid://cbk1qyuacfn8c")
+spawn_path = NodePath("../PLayers")
+
+[node name="Map" parent="." unique_id=1435417387 instance=ExtResource("1_lhmds")]
+
+[node name="Area2D" type="Area2D" parent="Map" unique_id=1933967743]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Area2D" unique_id=2047619202]
+position = Vector2(469.6764, 299.7226)
+polygon = PackedVector2Array(906.32367, -1491.7225, 1474.3236, -1299.7225, 1922.3236, -971.72266, 2106.3237, -315.7226, 2154.3237, 396.2774, 2538.3237, 388.2774, 3162.3237, -35.722614, 3618.3237, -3.7226117, 3762.3237, 700.27734, 3442.3237, 1412.2775, 2578.3237, 1836.2775, 1498.3236, 2116.2773, 114.32362, 2084.2773, -1165.6764, 2044.2775, -2125.6763, 1764.2775, -2453.6763, 1196.2773, -2445.6763, 236.2774, -2341.6763, -387.7226, -1981.6764, -947.72266, -1853.6764, -1283.7225, -1533.6764, -1507.7225, -1045.6764, -1587.7225, -453.6764, -1771.7225, 58.32362, -1747.7225, 322.3236, -1699.7225)
+
+[node name="Control" parent="." unique_id=1467941075 instance=ExtResource("3_tew6e")]

@@ -3,18 +3,18 @@ const SPEED = 300
 var direction 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if not direction == null:
-		rotation = direction.angle() + deg_to_rad(90)
+   if not direction == null:
+    rotation = direction.angle() + deg_to_rad(90)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if direction != null:
-		velocity += direction * SPEED
-	
-	move_and_slide()
+ if direction != null:
+  velocity += direction * SPEED
+  
+  move_and_slide()
 
 
 func _on_area_body_entered(body: Node2D) -> void:
-	if body.name == "Objects":
-		queue_free()
+  if body.name == "Objects":
+    queue_free()

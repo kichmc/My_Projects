@@ -12,7 +12,6 @@ config_version=5
 
 config/name="Tankster"
 config/version="alpha"
-config/tags=PackedStringArray("tankster")
 run/main_scene="uid://bgt4qbo81tl4i"
 config/features=PackedStringArray("4.7", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -22,6 +21,7 @@ boot_splash/image="uid://n458jhkbbkq1"
 [autoload]
 
 Pos="*uid://c33iory7lks3d"
+Lan_MultiPlayer="*uid://b778ybeej4j5h"
 
 [display]
 
@@ -39,7 +39,6 @@ Shoot={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
-pointing/emulate_mouse_from_touch=false
 
 [physics]
 

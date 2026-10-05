@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cjeesfg086wj2"]
+
+[ext_resource type="Texture2D" uid="uid://5tmjrqhl4aoa" path="res://Pngs/Canvas.svg" id="1_88iha"]
+[ext_resource type="Script" uid="uid://cih1l8l5a3up3" path="res://Scenes/Lobby2.gd" id="1_gdf8p"]
+[ext_resource type="Texture2D" uid="uid://dmqn6gxibnspv" path="res://mobile-controls/20260923_191535.png" id="2_gdf8p"]
+[ext_resource type="FontFile" uid="uid://c2ycrmnb7spu8" path="res://Other/BlackOpsOne-Regular.ttf" id="2_sbekx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdf8p"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 11
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sbekx"]
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdf8p"]
+font = ExtResource("2_sbekx")
+font_size = 96
+font_color = Color(1, 0, 0.21176471, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c454k"]
+texture = ExtResource("2_gdf8p")
+expand_margin_left = 120.0
+expand_margin_top = 96.0
+expand_margin_right = 120.0
+expand_margin_bottom = 96.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t46wp"]
+texture = ExtResource("2_gdf8p")
+expand_margin_left = 120.0
+expand_margin_top = 96.0
+expand_margin_right = 120.0
+expand_margin_bottom = 96.0
+
+[node name="Control" type="Control" unique_id=2082337159]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gdf8p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1438484795]
+
+[node name="LineEdit" type="Label" parent="CanvasLayer" unique_id=1207172958]
+offset_left = 8.0
+offset_top = 364.0
+offset_right = 76.5
+offset_bottom = 409.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_gdf8p")
+text = "IP"
+label_settings = SubResource("LabelSettings_sbekx")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1627743187]
+z_index = -1
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 2049.0
+offset_bottom = 1477.0
+texture = ExtResource("1_88iha")
+
+[node name="Tankster" type="Label" parent="CanvasLayer" unique_id=1403548077]
+offset_left = 353.0
+offset_top = 85.00001
+offset_right = 869.0
+offset_bottom = 206.0
+scale = Vector2(0.83098406, 0.72978586)
+text = "TANKSTER"
+label_settings = SubResource("LabelSettings_gdf8p")
+justification_flags = 131
+
+[node name="Host_button" type="Button" parent="CanvasLayer" unique_id=585516794]
+offset_left = 402.0
+offset_top = 267.3622
+offset_right = 652.0
+offset_bottom = 317.3622
+scale = Vector2(1.3691969, 1.8792644)
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 3)
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sbekx")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_c454k")
+text = "Host"
+
+[node name="Join_button" type="Button" parent="CanvasLayer" unique_id=1786702945]
+offset_left = 399.0
+offset_top = 395.3622
+offset_right = 649.0
+offset_bottom = 445.3622
+scale = Vector2(1.3814417, 1.645485)
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sbekx")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_t46wp")
+text = "Join"
+
+[connection signal="pressed" from="CanvasLayer/Host_button" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Join_button" to="." method="_on_join_button_pressed"]

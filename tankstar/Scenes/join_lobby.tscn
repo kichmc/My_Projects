@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dvelt86v01m0y"]
+
+[ext_resource type="Texture2D" uid="uid://5tmjrqhl4aoa" path="res://Pngs/Canvas.svg" id="1_3k8tj"]
+[ext_resource type="Script" uid="uid://dlplv563c1ufi" path="res://Scenes/join_lobby.gd" id="1_q5nxn"]
+[ext_resource type="FontFile" uid="uid://c2ycrmnb7spu8" path="res://Other/BlackOpsOne-Regular.ttf" id="2_q5nxn"]
+[ext_resource type="Texture2D" uid="uid://c7qio485uavmr" path="res://mobile-controls/Vector/Icons/icon_arrow.svg" id="4_8n45r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8n45r"]
+font = ExtResource("2_q5nxn")
+font_size = 96
+font_color = Color(1, 0, 0.21176471, 1)
+
+[node name="Control" type="Control" unique_id=1198504932]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q5nxn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1657519326]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=484431341]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3k8tj")
+
+[node name="Tankster" type="Label" parent="CanvasLayer" unique_id=679962662]
+offset_left = 295.0
+offset_top = 89.0
+offset_right = 811.0
+offset_bottom = 210.0
+text = "TANKSTER"
+label_settings = SubResource("LabelSettings_8n45r")
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer" unique_id=230532034]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 468.0
+offset_top = 312.0
+offset_right = -484.0
+offset_bottom = -305.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+placeholder_text = "Ip_adress"
+keep_editing_on_text_submit = true
+expand_to_text_length = true
+
+[node name="Back" type="Button" parent="CanvasLayer" unique_id=1074860712]
+offset_left = 446.0
+offset_top = 343.0
+offset_right = 502.0
+offset_bottom = 399.0
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_8n45r")
+
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

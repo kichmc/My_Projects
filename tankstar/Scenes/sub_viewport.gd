@@ -1,15 +1,11 @@
-extends Node
-var map
+extends SubViewport
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  pass
+  world_2d = get_tree().root.world_2d
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-  pass
-
-func spawn_pos() -> Vector2:
-  var map = get_tree().current_scene.get_world_2d().navigation_map
-  return NavigationServer2D.map_get_random_point(map,1,false)
+  $Camera2D.position = $"../../../Players/Player".position
